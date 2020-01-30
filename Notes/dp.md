@@ -1,7 +1,7 @@
 # Dynamic Programming
 ## Concepts
 **What is dynamic programming?**\
-DP is recursion with memorization.
+DP is recursion with memoization.
 
 **What is dynamic programming good for?**\
 DP is good for solving optimization problems.
@@ -18,37 +18,45 @@ DP is good for solving optimization problems.
 **Recursion tree**\
 Recursion tree shows parent-child relationship for all recursive calls. See example in ITA3_p364_figure15.3 (ITA3: Introduction to Algorithms 3rd Edition).
 
-_Question: Why does the recursion tree has 2<sup>n</sup> nodes?_
+_Question:_ Why does the recursion tree has 2<sup>n</sup> nodes?\
+_Answer:_ See ITA3S_15.1.md.
 
-#### Recursive DP
-- memoize
-- re-use solutions to subproblems
-- time = # of subproblems * time/subproblem
+**Two approaches to implement DP**
+- Top-down with memoization
+- Bottom-up method
 
-#### Bottom-up DP
-- same computation as recursion
-- <u>topological sort</u> of subproblem dependency DAG
-- Advantage: save space. only need constant space because only the last two values are need to be memoized
+## Problems
+#### Rod cutting
+> Given a rod of length n inches and a
+table of prices $p_i$ for $i = 1, 2, ..., n$, determine the maximum revenue $r_n$ obtainable by cutting up the rod and selling the pieces.
+
+**Naive recursive solution**
+```python
+cut_rod(p,n)
+  if n == 0
+    return 0
+  q = -infinite
+  for i = 1 to n
+    q = max(q, p[i] + cut_rod(p, n-1))
+  return q
 ```
-fib = {} # hashmap for remembering solutions to subproblemsfor k in range(n):
-  if k <= 2: f = 1
-  else: f = fib[k-1] + fib[k-2]
-  fib[k] = f
-return fib[n]
-```
+**Memoized top-down solution**
+```python
+memoized_cut_rod(p,n)
+  let r[0..n] be a new array with n elements
+  for i = 0 to n
+    r[i] = - infinite
+  return memoized_cut_rod_aux(p,n,r)
 
-#### Shortest Paths
-(s, v) for all v\
-Tool: guessing and try ALL guesses (& take the best one)
-- Idea 1: guess first edge
-- Idea 2: guess last edge
-  - delta(s,v) = min(delta(s,u) + delta(u,v)) where u is the last edge leades to v
-- Time complexity
-  - Infinite time on graphs with cycles
-  - DAG: theta(E+v) (E is number of total edges?)
-    - time for subproblem delta(s,v) = indegree(v) + 1 (Why +1?)
-    - total time = sum of indegree(v) over all v = theta(E + v)
-- Subproblem dependency should be acyclic
-- For cyclic graphs
-  - explode cyclic graphs into k dimentions (k as number of possible starting nodes that could lead to v? since all nodes will lead to v so k is equal to v?)
-- Checkout Bellman-Ford algorithm
+memoized_cut_rod_aux(p,n,r)
+  if r[n] >= 0
+    return r[n]
+  if n == 0
+    q = 0
+  else
+    q = - infinite
+    for i = 1 to n
+      q = max(q, p[i] + memoized_cut_rod_aux(p, n-i, r))
+  r[n] = q
+  return q
+```
