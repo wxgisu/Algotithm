@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class BST {
     Node root = null;
@@ -50,11 +51,99 @@ public class BST {
     }
 
     public void dfsIn() {
+        if (root == null) {
+            System.out.print("tree is empty.");
+            return;
+        }
+        dfsIn(root);
+    }
 
+    private void dfsIn(Node cur) {
+        if (cur == null) {
+            System.out.println("this is the end of a branch");
+            return;
+        }
+
+        dfsIn(cur.left);
+        System.out.println(cur.data);
+        dfsIn(cur.right);
+        System.out.println("this is the end of subtree " + cur.data);
     }
 
     public void dfsPost() {
+        if (root == null) {
+            System.out.print("tree is empty.");
+            return;
+        }
+        dfsPost(root);
+    }
 
+    private void dfsPost(Node cur) {
+        if (cur == null) {
+            System.out.println("this is the end of a branch");
+            return;
+        }
+
+        dfsPost(cur.left);
+        dfsPost(cur.right);
+        System.out.println(cur.data);
+        System.out.println("this is the end of subtree " + cur.data);
+    }
+
+    public void dfsPreUsingStack() {
+        if (root == null) {
+            System.out.print("tree is empty.");
+            return;
+        }
+        LinkedList<Node> stack = new LinkedList<>();
+        stack.push(root);
+
+        while (! stack.isEmpty()) {
+            Node cur = stack.pop();
+            System.out.println(cur.data);
+            if (cur.right != null) stack.push(cur.right);
+            if (cur.left != null) stack.push(cur.left);
+        }
+    }
+
+    public void dfsInUsingStack() {
+        if (root == null) {
+            System.out.print("tree is empty.");
+            return;
+        }
+        LinkedList<Node> stack = new LinkedList<>();
+        Node cur = root;
+
+        while(! stack.isEmpty() || cur != null) {
+            while(cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            System.out.println(cur.data);
+            cur = cur.right;
+        }
+    }
+
+    public void dfsPostUsingStack() {
+        if (root == null) {
+            System.out.print("tree is empty.");
+            return;
+        }
+        LinkedList<Node> stack = new LinkedList<>();
+        stack.push(root);
+        LinkedList<Node> res = new LinkedList<>();
+        
+        while(! stack.isEmpty()) {
+            Node cur = stack.pop();
+            res.push(cur);
+            if (cur.left != null) stack.push(cur.left);
+            if (cur.right != null) stack.push(cur.right);
+        }
+
+        while(! res.isEmpty()) {
+            System.out.println(res.pop().data);
+        }
     }
 
     public void bfs() {

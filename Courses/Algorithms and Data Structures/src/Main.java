@@ -19,7 +19,9 @@ public class Main {
         bt.add(150);
         bt.add(140);
         bt.add(200);
-        bt.dfsPre();
+        // bt.dfsPre();
+        bt.dfsPostUsingStack();
+
 
     }
 }
