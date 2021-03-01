@@ -1,0 +1,133 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MergeSort",
+            "request": "launch",
+            "mainClass": "MergeSort",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Prism",
+            "request": "launch",
+            "mainClass": "Prism",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Dijkstra",
+            "request": "launch",
+            "mainClass": "Dijkstra",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestPriorityQueue",
+            "request": "launch",
+            "mainClass": "TestPriorityQueue",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NumOfPaths",
+            "request": "launch",
+            "mainClass": "NumOfPaths",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MinCostToLastCell",
+            "request": "launch",
+            "mainClass": "MinCostToLastCell",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LPSString",
+            "request": "launch",
+            "mainClass": "LPSString",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LPSSeq",
+            "request": "launch",
+            "mainClass": "LPSSeq",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LPS",
+            "request": "launch",
+            "mainClass": "LPS",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LCS",
+            "request": "launch",
+            "mainClass": "LCS",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ZeroOneKnapsack",
+            "request": "launch",
+            "mainClass": "ZeroOneKnapsack",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConvertString",
+            "request": "launch",
+            "mainClass": "ConvertString",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HouseThief",
+            "request": "launch",
+            "mainClass": "HouseThief",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NumberFactor",
+            "request": "launch",
+            "mainClass": "NumberFactor",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Fib",
+            "request": "launch",
+            "mainClass": "Fib",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Graph",
+            "request": "launch",
+            "mainClass": "Graph",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<Algorithms and Data Structures_1ae2cc3a>",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Algorithms and Data Structures_1ae2cc3a"
+        }
+    ]
+}
